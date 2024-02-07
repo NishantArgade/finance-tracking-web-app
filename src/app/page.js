@@ -17,6 +17,7 @@ export default function Home() {
       return res.json();
     },
     initialData: [],
+    enabled: !!process.env.NEXT_PUBLIC_BASE_API_URL,
   });
 
   const calculatedData = useMemo(() => {
