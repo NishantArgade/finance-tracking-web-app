@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,5 +15,47 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss/plugin")(({ addUtilities }) => {
+      const newUtilities = {
+        ".flex-r-center": {
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        },
+        ".flex-r-start": {
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "start",
+        },
+        ".flex-r-end": {
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "end",
+        },
+        ".flex-c-center": {
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        },
+        ".flex-c-start": {
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "start",
+        },
+        ".flex-c-end": {
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "end",
+        },
+      };
+      addUtilities(newUtilities);
+    }),
+  ],
 };
