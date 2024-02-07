@@ -67,7 +67,7 @@ const Transaction = () => {
         <input
           className="shadow-md p-2 bg-white text-sm text-gray-600 rounded-[0.250rem] outline-blue-500 border-[1.5px] border-gray-300"
           type="text"
-          placeholder="Sallary, House Rent, SIP"
+          placeholder="Salary, House Rent, SIP"
           value={inputs.name}
           onChange={(e) =>
             setInputs((state) => ({ ...state, name: e.target.value }))
