@@ -20,6 +20,7 @@ const History = () => {
     queryKey: ["getAllTransactionHistory"],
     queryFn: getHistory,
     initialData: [],
+    enabled: !!process.env.NEXT_PUBLIC_BASE_API_URL,
   });
   return (
     <>
