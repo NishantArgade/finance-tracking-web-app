@@ -11,13 +11,10 @@ export default function Home() {
   const { data } = useQuery({
     queryKey: "allWalletsData",
     queryFn: async () => {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/wallet`
-      );
+      const res = await fetch(`api/wallet`);
       return res.json();
     },
     initialData: [],
-    enabled: !!process.env.NEXT_PUBLIC_BASE_API_URL,
   });
 
   const calculatedData = useMemo(() => {

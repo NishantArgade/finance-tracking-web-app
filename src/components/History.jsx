@@ -5,9 +5,7 @@ import DeleteTransactionBtn from "./DeleteTransactionBtn";
 
 const getHistory = async () => {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/wallet`
-    );
+    const response = await fetch(`api/wallet`);
     const obj = await response.json();
     return obj.data;
   } catch (e) {
@@ -20,7 +18,6 @@ const History = () => {
     queryKey: ["getAllTransactionHistory"],
     queryFn: getHistory,
     initialData: [],
-    enabled: !!process.env.NEXT_PUBLIC_BASE_API_URL,
   });
   return (
     <>

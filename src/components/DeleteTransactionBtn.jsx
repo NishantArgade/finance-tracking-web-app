@@ -7,12 +7,9 @@ import { MdDelete } from "react-icons/md";
 const DeleteTransactionBtn = ({ transactionId }) => {
   const handleDeleteTransaction = async (id) => {
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/wallet?id=${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const response = await fetch(`api/wallet?id=${id}`, {
+        method: "DELETE",
+      });
       return await response.json();
     } catch (error) {
       return Promise.reject();
