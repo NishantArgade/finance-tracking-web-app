@@ -11,7 +11,9 @@ export default function Home() {
   const { data } = useQuery({
     queryKey: "allWalletsData",
     queryFn: async () => {
-      const res = await fetch("http://localhost:3000/api/wallet");
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/wallet`
+      );
       return res.json();
     },
     initialData: [],

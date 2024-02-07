@@ -8,7 +8,7 @@ const DeleteTransactionBtn = ({ transactionId }) => {
   const handleDeleteTransaction = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/wallet?id=${id}`,
+        `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/wallet?id=${id}`,
         {
           method: "DELETE",
         }
